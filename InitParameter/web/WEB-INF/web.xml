@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <description>Can be retrieved using ServletContext.getServletContextName()</description>
+    <display-name>InitParameterContext</display-name>
+    <context-param>
+        <param-name>identity</param-name>
+        <param-value>Context Initialization Parameter</param-value>
+    </context-param>
+    <context-param>
+        <param-name>scope</param-name>
+        <param-value>Context</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ServletAInitParameter</servlet-name>
+        <servlet-class>com.hashdroid.ServletAInitParameter</servlet-class>
+        <init-param>
+            <param-name>identity</param-name>
+            <param-value>Srervlet Initialization Parameter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>scope</param-name>
+            <param-value>Servlet named ServletAInitParameter</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletBInitParameter</servlet-name>
+        <servlet-class>com.hashdroid.ServletBInitParameter</servlet-class>
+        <init-param>
+            <param-name>identity</param-name>
+            <param-value>Servlet Initialization Parameter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>scope</param-name>
+            <param-value>Servlet named ServletBInitParameter</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletAInitParameter</servlet-name>
+        <url-pattern>/ServletAInitParameter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletBInitParameter</servlet-name>
+        <url-pattern>/ServletBInitParameter</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
